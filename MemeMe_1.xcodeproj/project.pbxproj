@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1804ADFC1FCFADB60060C945 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804ADFB1FCFADB60060C945 /* Meme.swift */; };
 		187F923B1FB894D8009D9F07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F923A1FB894D8009D9F07 /* AppDelegate.swift */; };
 		187F923D1FB894D8009D9F07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F923C1FB894D8009D9F07 /* ViewController.swift */; };
 		187F92401FB894D8009D9F07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187F923E1FB894D8009D9F07 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1804ADFB1FCFADB60060C945 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		187F92371FB894D8009D9F07 /* MemeMe_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		187F923A1FB894D8009D9F07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		187F923C1FB894D8009D9F07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				187F923A1FB894D8009D9F07 /* AppDelegate.swift */,
+				1804ADFB1FCFADB60060C945 /* Meme.swift */,
 				187F923C1FB894D8009D9F07 /* ViewController.swift */,
 				187F923E1FB894D8009D9F07 /* Main.storyboard */,
 				187F92411FB894D8009D9F07 /* Assets.xcassets */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1804ADFC1FCFADB60060C945 /* Meme.swift in Sources */,
 				187F923D1FB894D8009D9F07 /* ViewController.swift in Sources */,
 				187F923B1FB894D8009D9F07 /* AppDelegate.swift in Sources */,
 			);
