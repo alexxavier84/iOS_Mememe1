@@ -24,10 +24,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var bottomText: UITextField!
     
     let memeTextAttributes: [String: Any] = [
-        NSAttributedStringKey.strokeColor.rawValue: UIColor.white,
-        NSAttributedStringKey.foregroundColor.rawValue: UIColor.black,
+        NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
+        NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
         NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSAttributedStringKey.strokeWidth.rawValue: 10.0]
+        NSAttributedStringKey.strokeWidth.rawValue: -1.0]
     
     ///View delegates
     
@@ -79,7 +79,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         //Set text view to empty when editing
-        textField.text = ""
+        if (textField.tag == 1 && textField.text == "TOP") || (textField.tag == 2 && textField.text == "BOTTOM"){
+            textField.text = ""
+        }
 
     }
     
@@ -93,6 +95,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage{
             imageView.image = image
+            imageView.contentMode = .scaleAspectFit
             
             //Enable share button only when the image is selected
             shareButton.isEnabled = true
@@ -115,7 +118,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func shareMeme(_ sender: Any) {
-        let memeImage = save()
+        var memeImage = UIImage()
         let shareActivityController = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
         self.present(shareActivityController, animated: true, completion: nil)
         
@@ -124,6 +127,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if !completed {
                 return
             }
+            memeImage = self.save()
         }
     }
     
@@ -138,6 +142,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textField.defaultTextAttributes = memeTextAttributes
         textField.delegate = self as UITextFieldDelegate
         textField.textAlignment = .center
+        textField.adjustsFontSizeToFitWidth = true
         self.view.addSubview(textField)
         return textField
     }
